@@ -57,12 +57,40 @@ const regularUser = {
 
 
 // // Merging two or more objects...
+
 // const ans = Object.assign({}, tinderUser, regularUser)
 // console.log(ans);
+
 // // OR we will use spread syntax
+
 // const obj3 = {...tinderUser, ...regularUser}
 // console.log(obj3);
 
+// we may make array of objects:
 
+const user = [
+    {
+        id: 1,
+        email: "1@gmail.com"
+    },
+    {
+        id:2,
+        email: "2@gmail.com"
+    },
+    {
+        id:3,
+        email: "3@gmail.com"
+    }
+]
 
+console.log(user[1].email);
+
+console.log(Object.keys(tinderUser))// this returns an array
+/*
+    Object.keys returns array of keys
+    Object.values returns array of values
+    Object.entries returns arrays of key value pair [keyi, vali]
+*/
+
+console.log(tinderUser.hasOwnProperty("name"));// whether the object has that property
 
