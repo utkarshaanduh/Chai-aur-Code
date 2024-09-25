@@ -14,4 +14,12 @@ console.log(sayMyName());
     passed
 */
 
+function cartPrice(val1,val2,val3,...num1)
+{
+    return num1;
+}
+
+console.log(cartPrice(100,200,300,1000,2000,3000,4000));
+
+// Similarly objects and arrays may be passed in a function
 
