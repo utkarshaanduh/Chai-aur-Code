@@ -13,9 +13,33 @@
     from the scope for windows
 */
 
-// Nested scope and  
+// Nested scope and Hoisting
 
+function one()
+{
+    const username = "Hitesh"
 
+    function two()
+    {
+        const website = "youtube"
+        console.log(username)
+    }
+    //console.log(website);
 
+    two()
+}
 
+one()
+// scopes are like ice-cream child may take it from parent but not vice-versa
+
+// functions may be made as expressions as variable holds the function:
+const ans = function(num1) {
+    return num1 + 1;
+}
+
+console.log(ans(5));
+
+// In case of expressions the expression may only work if
+// it is called after the declaration of the expression
+// this is called hoisting
 
