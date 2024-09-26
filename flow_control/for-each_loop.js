@@ -40,5 +40,52 @@ coding.forEach((item,index,arr) =>{
     console.log(item, index, arr);
 })
 
+const myCoding = [
+    {
+        languageName: "javascript",
+        languagefile: ".js"
+    },
+    {
+        languageName: "python",
+        languagefile: ".py"
+    },
+    {
+        languageName: "cpp",
+        languagefile: ".cpp"
+    }
+]
+
+myCoding.forEach((item) =>
+    {
+        console.log(item.languageName);
+        console.log(item.languagefile);
+    })
+
+/* 
+"forEach" loop in js donot returns any value hence it 
+is difficult to store the iterations of the loop in some 
+array or some other data structure for that particular we 
+use .filter function of javascript:
+*/
+
+const nums = [1,2,3,4,5,6,7,8,9,10]
+
+const newnums = nums.filter((value) => { return value > 3 })
+
+console.log(newnums);
+
+/* 
+Same can be done via using some logic for ".forEach":
+*/
+
+const arra = [];
+ 
+nums.forEach((val)=>{
+    if(val != 0){
+        arra.push(val);
+    }
+})
+
+console.log(arra);
 
 
