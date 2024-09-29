@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+/*-------------- Adding list item using function---------*/
+    function addlang(langName){
+        const newElement = document.createElement("li")
+        newElement.innerHTML = `${langName}`
+        document.querySelector(".language").appendChild(newElement);
+    }
+    // addlang("python")
+    // addlang("cpp")
+/*-------------------------------Optimized Way--------------------------------- */
+    addOptiLang = (langName) => {
+            const newl = document.createElement("li");
+            newl.appendChild(document.createTextNode(langName))
+            document.querySelector(".language").appendChild(newl)
+    }
+    addOptiLang("typescript");
+/*------------------------------Editing in DOM---------------------------------*/
+    const secondlang = document.querySelector("li:nth-child(2)")
+    //secondlang.innerHTML = "mojo"
+    const element = document.createElement("li");
+    element.appendChild(document.createTextNode("Mojo"));
+    secondlang.replaceWith(element);
+/*-------------------------Removal in DOM-------------------------------------------------*/
+    const lastlang = document.querySelector("li:last-child");
+    lastlang.remove();
+/*-------------------------------------------------------------------------------------------------*/
+</script>
+</html>
