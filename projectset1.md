@@ -75,7 +75,7 @@ form.addEventListener("submit",((e)=>{
 }));
 ```
 ## project 3 (digital clock using setInterval())
-```javscript
+```javascript
 
 const clock = document.querySelector('#clock')
 
