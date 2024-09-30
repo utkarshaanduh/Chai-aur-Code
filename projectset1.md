@@ -74,3 +74,16 @@ form.addEventListener("submit",((e)=>{
   }
 }));
 ```
+## project 3 (digital clock using setInterval())
+
+```javscript
+
+const clock = document.querySelector('#clock')
+
+setInterval(function(){
+  let date = new Date();
+  //console.log(date.toLocaleTimeString()); this was to check the time in console that if the thing is working.
+  clock.innerHTML = date.toLocaleTimeString(); 
+}, 1000);
+
+```
