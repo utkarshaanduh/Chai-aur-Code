@@ -72,6 +72,5 @@ form.addEventListener("submit",((e)=>{
       results.innerHTML = 'Over Weight ${bmi}'
     }
   }
-  
 }));
 ```
