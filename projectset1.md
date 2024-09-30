@@ -86,3 +86,105 @@ setInterval(function(){
 }, 1000);
 
 ```
+## project (Guess the number game)
+```javascript
+const input = document.querySelector('#guessfield');
+let numberToGuess = parseInt(Math.random() * 10 + 1);
+const submitbutton = document.querySelector('#subt');
+const guessSlot = document.querySelector('.guesses');
+const remaining = document.querySelector('.lastResult');
+const loworhigh = document.querySelector('.lowOrHi');
+const startOver = document.querySelector('.resultParas');
+
+const p = document.createElement('p');
+
+let previousguess = [];
+let numGuess = 1;
+let playGame = true;
+
+// lets make functions that will be used during this project:
+
+//when to play game
+if (playGame) {
+  submitbutton.addEventListener('click', function (e) {
+    e.preventDefault();
+    const guess = parseInt(input.value);
+    console.log(guess);
+    validate(guess);
+  });
+}
+
+// validate for a valid guess
+validate = (guess) => {
+  if (isNaN(guess)) {
+    alert('Please enter a valid number');
+  } else if (guess < 1) {
+    alert('Please enter a number grater than 0');
+  } else if (guess > 100) {
+    alert('Please enter a number less than 100');
+  } else {
+    previousguess.push(guess);
+    if (numGuess === 11) {
+      displayguess(guess);
+      displaymessage(`Game Over.Random number was ${numberToGuess}`);
+      endGame();
+    } else {
+      displayguess(guess);
+      check(guess);
+    }
+  }
+};
+
+// check guess
+check = (guess) => {
+  if (guess === numberToGuess) {
+    displaymessage('You guessed it right');
+    endGame();
+  } else if (guess < numberToGuess) {
+    displaymessage(`Number to guess is greater than the guessed number`);
+  } else if (guess > numberToGuess) {
+    displaymessage(`Number to guess is smaller than the guessed number`);
+  }
+};
+
+// display guess (cleanup method)
+function displayguess(guess) {
+  input.value = '';
+  guessSlot.innerHTML += `${guess} `;
+  numGuess++;
+  remaining.innerHTML = `${11 - numGuess} `;
+}
+
+// display message
+displaymessage = (message) => {
+  loworhigh.innerHTML = `<h2>${message}</h2>`;
+};
+
+// New Game
+function newGame() {
+  const newGameButton = document.querySelector('#newGame');
+  newGameButton.addEventListener('click', function (e) {
+    numberToGuess = parseInt(Math.random() * 100 + 1);
+    previousguess = [];
+    numGuess = 1;
+    guessSlot.innerHTML = '';
+    remaining.innerHTML = `${11 - numGuess} `;
+    input.removeAttribute('disabled');
+    startOver.removeChild(p);
+
+    playGame = true;
+  });
+}
+
+// End Game
+function endGame() {
+  input.value = '';
+  input.setAttribute('disabled', '');
+  p.classList.add('button');
+  p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+  startOver.appendChild(p);
+  playGame = false;
+  newGame();
+}
+
+```
