@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>    
+</body>
+<script>
+    const changeHeading = function(){
+        document.querySelector('h1').innerHTML = "Best JS series in the world"
+    }
+    const timeoutReference = setTimeout(changeHeading,2000)
+
+    // Now we want that if I hit the stop button then it stops the timeout and dosen't executes the timeout function
+
+    // So from above discussion we need to apply a event listener
+
+    document.querySelector("#stop").addEventListener("click", function(event){
+        clearTimeout("timeoutReference");
+        console.log("button is pushed and clearTimeout is executed");
+    })
+
+</script>
+</html>
