@@ -86,7 +86,7 @@ setInterval(function(){
 }, 1000);
 
 ```
-## project (Guess the number game)
+## project 4 (Guess the number game)
 ```javascript
 const input = document.querySelector('#guessfield');
 let numberToGuess = parseInt(Math.random() * 10 + 1);
